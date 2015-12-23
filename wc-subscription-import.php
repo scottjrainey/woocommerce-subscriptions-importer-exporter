@@ -41,7 +41,7 @@ class WC_Subscription_Importer {
 	public static function setup_importer() {
 
 		if ( is_admin() ) {
-			if ( class_exists( 'WC_Subscriptions' ) && version_compare( WC_Subscriptions::$version, '1.5', '>=' ) ) {
+			if ( class_exists( 'WC_Subscriptions' ) && version_compare( WC_Subscriptions::$version, '1.5', '>=' ) && version_compare( WC_Subscriptions::$version, '2.0', '<' ) ) {
 				self::$wcs_importer = new WCS_Admin_Importer();
 			} else {
 				add_action( 'admin_notices', __CLASS__ . '::plugin_dependency_notice' );
