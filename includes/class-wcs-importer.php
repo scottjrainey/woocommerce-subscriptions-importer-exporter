@@ -503,14 +503,14 @@ class WCS_Importer {
 
 				if ( ! empty( $data[ self::$fields['payment_method_post_meta'] ] ) ) {
 					foreach ( explode( '|', $data[ self::$fields['payment_method_post_meta'] ] ) as $meta ) {
-						list( $name, $value ) = explode( ':', $meta );
+						list( $name, $value ) = explode( ':', $meta, 2 );
 						$payment_post_meta[ trim( $name ) ] = trim( $value );
 					}
 				}
 
 				if ( ! empty( $data[ self::$fields['payment_method_user_meta'] ] ) ) {
 					foreach ( explode( '|', $data[ self::$fields['payment_method_user_meta'] ] ) as $meta ) {
-						list( $name, $value ) = explode( ':', $meta );
+						list( $name, $value ) = explode( ':', $meta, 2 );
 						$payment_user_meta[ trim( $name ) ] = trim( $value );
 					}
 				}
